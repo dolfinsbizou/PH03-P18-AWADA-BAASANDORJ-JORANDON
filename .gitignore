@@ -7,3 +7,5 @@
 *.lot
 *.toc
 svg-inkscape/
+*.bbl
+*.blg

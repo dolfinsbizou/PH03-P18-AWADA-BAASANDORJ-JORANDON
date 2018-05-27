@@ -1,0 +1,9 @@
+*.aux
+*.log
+*.out
+*.pdf
+*.idx
+*.lof
+*.lot
+*.toc
+svg-inkscape/

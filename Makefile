@@ -1,10 +1,10 @@
 LATEX_OPT = --shell-escape
 
 all: pdf
-pdf: memoire_ph03.tex #bibliography.bib
+pdf: memoire_ph03.tex glossary.tex memoire_ph03_bib.bib
 	pdflatex $(LATEX_OPT) memoire_ph03.tex
 	pdflatex $(LATEX_OPT) memoire_ph03.tex
-	#makeglossaries memoire_ph03
+	makeglossaries memoire_ph03
 	bibtex memoire_ph03 || true
 	pdflatex $(LATEX_OPT) memoire_ph03.tex
 	pdflatex $(LATEX_OPT) memoire_ph03.tex

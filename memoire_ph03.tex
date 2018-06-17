@@ -6,8 +6,21 @@
 \usepackage{graphicx}
 \usepackage{svg}
 \usepackage{makeidx}
+\usepackage[pdfusetitle]{hyperref}
+\hypersetup{hidelinks,backref=true,pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor= custom_color,bookmarks=true,bookmarksopen=false}
+\usepackage[acronyms, toc]{glossaries}
+\makeglossaries
+\usepackage{xparse}
+\DeclareDocumentCommand{\newdualentry}{ O{} O{} m m m m } {
+\longnewglossaryentry{gls-#3}{name={#5},text={#5},#1
+}{#6}
+\makeglossaries
+\newacronym[see={[Voir :]{gls-#3}},#2]{#3}{#4}{#5\glsadd{gls-#3}}
+}
+
 
 \graphicspath{{img/}}
+\input{glossary}
 
 \title{Industries culturelles et politisation de l'esthétique}
 \author{\textsc{Awada} Ali, \textsc{Baasandorj} Chinbat et \textsc{Jorandon} Guillaume}
@@ -21,6 +34,24 @@
 \tableofcontents
 
 \chapter*{Introduction}
+
+\gls{shit} et \gls{shit-def}
+
+Le 20\up{e} siècle a été une époque charnière dans la courte Histoire de l'humanité. Siècle des grandes guerres mondiales, il a été le témoin de projets techniques et scientifiques fulgurants, grandement motivés par les conflits et la lutte pour la suprématie. Dans l'après-guerre, on assiste progressivement à une globalisation et une industrialisation de la culture, phénomène étudié notamment par les philosophes de l'École de Francfort, comme Theodor \textsc{Adorno}. Ils développent ainsi dans les années 50 le concept d'industrie culturelle, et cherchent à étudier le fort pouvoir performatif de ces industries, étroitement liées à des enjeux économiques productivistes. \textsc{Adorno} postule notamment que les industries culturelles sont un des outils d'un pouvoir autoritaire et totalitaire moderne :
+
+\begin{itemize}
+    \item{autoritaire, car il impose une mentalité unique aux individus ;}
+    \item{totalitaire, car s'exerce à grande échelle et à tous les niveaux ;}
+    \item{moderne, car il n'a plus la forme des "dictatures d'hier".}
+\end{itemize}
+
+Il est important d'insister sur ce dernier point : les industries culturelles sont en effet devenues un instrument de pouvoir notamment à l'oeuvre dans nos belles démocraties du monde libre, au sein des sociétés libérales au sein desquelles la consommation de masse et le productivisme sont profondément ancrés.
+
+Les conséquences sont multiples, et nous essaierons d'y revenir en détails dans ce mémoire. Nous nous attacherons en effet à comprendre comment s'articulent ces industries culturelles, au travers d'un exemple récent : les plateformes de diffusion de contenu en ligne. En effet, le 21\up{e} siècle fait la part belle, avec l'essor de l'informatique moderne, à la collecte et au traitement automatisé\footnote{Ce traitement est automatisé dans le sens où les volumes de données sont traités par des algorithmes qui synthétisent l'information pour lui donner un sens. Nous reviendrons dans ce rapport sur la nature de ce sens.} de grands volumes de données, que l'on désigne souvent sous le terme très marketing de Big Data. L'accès à un Internet haut débit pour une part croissante de la population mondiale nous permet de consommer toujours plus de produits culturels : musiques, films, séries, émissions de télévision, livres, vidéos YouTube... YouTube justement, est l'une des plateformes qui règne en maître sur cette ère connectée, aux côtés d'autres géants culturels comme Spotify, Amazon ou Netflix, plateforme sur laquelle nous reviendrons en détail. Ces plateformes utilisent massivent le Big Data et l'analyse de données pour différentes raisons : proposer de la publicité ciblée, catégoriser le contenu selon les utilisateurs, et les utilisateurs selon le contenu, extraire des profils types, parfois même faire de la science\footnote{Des chercheurs se sont montrés intéressés par la masse d'utilisateurs de certaines plateformes en ligne, qui peuvent être un terrain d'expérimentation intéressant. On citera par exemple le cas de "corrupted blood", un bug de World of Warcraft, célèbre MMORPG de l'éditeur Blizzard. Ce bug provoqua en 2005 une pandémie virtuelle, la diffusion massive d'une maladie affectant les avatars des joueurs. Des articles d'épidémiologie ont été publiés par des chercheurs enthousiastes, comme [1].}...
+
+On peut alors conjecturer que cette masse d'informations sur la population mondiale\footnote{Facebook par exemple revendique dans ses utilisateurs près d'un tiers de la population mondiale.}, dans les mains de ces quelques acteurs, leur confère un pouvoir politique et économique gigantesque. Elles s'inscrivent dans une logique de biopolitique, c'est à dire une politique sur la vie des individus. Nous nous sommes alors demandé comment ces nouveaux acteurs, avec leurs algorithmes de profilage, peuvent-ils façonner une esthétique politisée ? Comment construisent-ils les goûts et les choix du consommateur, quelle influence ont-ils sur notre perception de l'art, et du "beau" ? En quoi prennent-elles place dans des enjeux de pouvoir ? En quoi ces plateformes sont-elles politiques ? Pour répondre à cette question, nous reviendrons d'abord en détail sur la notion d'industrie culturelle, leur histoire, l'histoire de leur étude, et ses évolutions récentes. Puis nous étudierons les plateformes de diffusion de masse et leur impact : quels problèmes soulèvent-elles,  Enfin, nous essayerons de réfléchir à des alternatives pour essayer d'aborder différemment notre rapport à l'information et la culture.
+
+Les sources utilisées pour rédiger ce mémoire sont indiquées à la fin du document, dans la section Bibliographie.
 
 La réf~\cite{wow_pandemic}.
 
@@ -55,6 +86,13 @@ La réf~\cite{wow_pandemic}.
 \bibliographystyle{alpha}
 \bibliography{memoire_ph03_bib}
 
-\printindex
+%\printindex
+
+\glossarystyle{altlist}
+\newpage
+\printglossary
+\newpage
+\printglossary[type=\acronymtype]
+
 \end{document}
 

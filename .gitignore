@@ -1,7 +1,6 @@
 *.aux
 *.log
 *.out
-*.pdf
 *.idx
 *.lof
 *.lot
@@ -9,3 +8,10 @@
 svg-inkscape/
 *.bbl
 *.blg
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist

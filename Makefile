@@ -13,7 +13,7 @@ quick:
 check:
 	lacheck memoire_ph03.tex
 clean:
-	rm `git check-ignore *`
+	rm -r `git check-ignore *`
 full: pdf
 	makeglossaries memoire_ph03
 	pdflatex $(LATEX_OPT) memoire_ph03.tex
